@@ -1,0 +1,15 @@
+get server version:
+    select version();
+    show variables like ‘%version%’
+
+list users:
+    select user();
+
+create user:
+    CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'password';
+
+set password
+    SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('password');
+    PASSWORD is a function,put real password string in this function
+    
+
