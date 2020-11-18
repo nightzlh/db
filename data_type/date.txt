@@ -1,0 +1,2 @@
+input:  select date_format(NOW(), '%Y-%m-%d')
+output: 2019-09-11
