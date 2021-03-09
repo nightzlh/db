@@ -37,11 +37,8 @@ sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_
 
 set @@GLOBAL.sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
 
+show global variables like 'max_allowed_packet';
 
-select t_order.picker_phone as phone, t_order.time, t_ob_action.bonus
-            , if(money.id is not null, 2, if(t_order.real_money = 0, 3, 1)) as status
-            from t_ob_action join t_order on t_ob_action.order_id = t_order.id
-                left join (select id, order_id from t_project_money) money on t_ob_action.order_id = money.order_id
-            where t_ob_action.uid = #{uid} and t_ob_action.action = 2
-            and t_order.time between #{timeStart, jdbcType=TIMESTAMP} and #{timeEnd, jdbcType=TIMESTAMP}
-            order by t_ob_action.id desc limit #{index}, #{size};
+et global max_allowed_packet=368435456; 356M unit is byte
+
+
