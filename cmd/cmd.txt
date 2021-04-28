@@ -11,7 +11,9 @@ create user:
 set password
     SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('password');
     PASSWORD is a function,put real password string in this function
-    
+
+date operate
+	date_add(pay_time, INTERVAL 1 DAY|MONTH|MINUTE|SECOND|MICROSECOND|WEEK|MONTH|QUARTER|YEAR)
 
 
 start stop restart
@@ -31,8 +33,6 @@ select 2,"李四",20 from dual
 where not exists
 (select id from person_table where uid=2 )
 
-
-
 sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 
 set @@GLOBAL.sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE'
@@ -43,7 +43,9 @@ show global variables like 'max_allowed_packet';
 
 set global max_allowed_packet=368435456; 356M unit is byte
 
-
 show variables like ‘%sql_mode%’;
+
+show create table t_stat_order
+
 
 
